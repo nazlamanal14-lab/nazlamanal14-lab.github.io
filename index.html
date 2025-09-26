@@ -1,0 +1,285 @@
+!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lakshmi - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E293B',
+                        secondary: '#F8FAFC',
+                        accent: '#FB923C',
+                        'supporting-white': '#FFFFFF',
+                        'medium-gray': '#64748B',
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Inter font import from Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8FAFC;
+        }
+        
+        /* Smooth scrolling behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Hero text animation */
+        #typing-text::after {
+            content: '|';
+            animation: blink 1s step-end infinite;
+        }
+
+        @keyframes blink {
+            from, to { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* Sticky header backdrop filter for a frosted glass effect */
+        .sticky-header {
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.7);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Sticky Header Navigation -->
+    <header class="sticky-header sticky top-0 z-50 py-4 shadow-sm backdrop-blur-md">
+        <nav class="container mx-auto px-6 lg:px-8 flex items-center justify-between">
+            <a href="#hero" class="text-xl font-bold text-primary">Lakshmi</a>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="#about" class="text-medium-gray hover:text-primary">About</a>
+                <a href="#projects" class="text-medium-gray hover:text-primary">Projects</a>
+                <a href="#contact" class="text-medium-gray hover:text-primary">Contact</a>
+                <a href="/resume.pdf" download class="bg-accent text-white px-4 py-2 rounded-full font-medium hover:bg-orange-600 transition-colors duration-300">Download Resume</a>
+            </div>
+            <!-- Mobile Menu -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-primary focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-white/90 shadow-lg py-2 mt-2">
+            <a href="#about" class="block px-4 py-2 text-primary hover:bg-gray-100">About</a>
+            <a href="#projects" class="block px-4 py-2 text-primary hover:bg-gray-100">Projects</a>
+            <a href="#contact" class="block px-4 py-2 text-primary hover:bg-gray-100">Contact</a>
+            <a href="/resume.pdf" download class="block px-4 py-2 text-primary hover:bg-gray-100">Download Resume</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="bg-primary text-secondary min-h-screen flex items-center justify-center text-center py-20 px-4">
+            <div class="max-w-4xl space-y-6">
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold">
+                    <span class="text-accent">Lakshmi</span>
+                </h1>
+                <p class="text-2xl md:text-3xl lg:text-4xl font-light leading-snug">
+                    <span id="typing-text"></span>
+                </p>
+                <p class="text-lg md:text-xl text-medium-gray max-w-2xl mx-auto">
+                    A passionate full-stack developer who loves turning wild ideas into pixel-perfect reality.
+                </p>
+                <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-4 pt-6">
+                    <a href="#projects" class="bg-accent text-white px-8 py-3 rounded-full font-medium hover:bg-orange-600 transition-colors duration-300 shadow-lg">View My Work</a>
+                    <a href="/resume.pdf" download class="bg-transparent text-white px-8 py-3 rounded-full font-medium border border-white hover:bg-white hover:text-primary transition-colors duration-300">Download Resume</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 px-4">
+            <div class="container mx-auto px-6 lg:px-8 max-w-6xl">
+                <h2 class="text-4xl md:text-5xl font-bold text-center text-primary mb-12">The Human Behind the Code</h2>
+                <div class="bg-white p-8 md:p-12 rounded-2xl shadow-xl flex flex-col md:flex-row items-center md:space-x-12 space-y-8 md:space-y-0">
+                    <div class="flex-shrink-0">
+                        <img src="https://placehold.co/300x300/64748B/FFFFFF?text=Lakshmi" alt="A professional photo of Lakshmi" class="rounded-full w-48 h-48 md:w-64 md:h-64 object-cover border-4 border-accent shadow-lg">
+                    </div>
+                    <div class="flex-grow space-y-6">
+                        <h3 class="text-3xl font-bold text-primary">Meet the Developer</h3>
+                        <p class="text-medium-gray text-lg leading-relaxed">
+                            Hey there! I'm lakshmi – a passionate full-stack developer who loves turning wild ideas into pixel-perfect reality. Currently crushing my BTech (Class of 2028), but I've been coding since before it was cool to have "developer" in your bio.
+                        </p>
+                        <p class="text-medium-gray text-lg leading-relaxed">
+                            My superpower? Building seamless web experiences that make users go "wow, that just works!" From crafting responsive frontends with React and Vue to architecting robust backends with Python and Django, I speak fluent code in multiple dialects.
+                        </p>
+                        <p class="text-medium-gray text-lg leading-relaxed">
+                            When I'm not debugging at 2 AM (okay, maybe I am), you'll find me exploring the latest web technologies, creating digital designs in Illustrator, or helping teams bring their visions to life through clear communication and solid project management.
+                        </p>
+                        <p class="text-medium-gray text-lg leading-relaxed">
+                            I believe great software isn't just about clean code – it's about solving real problems for real people. Ready to build something amazing together?
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="bg-primary text-secondary py-20 px-4">
+            <div class="container mx-auto px-6 lg:px-8 max-w-6xl">
+                <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">Things I've Built</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <!-- Project Card 1 -->
+                    <div class="bg-white text-primary rounded-2xl shadow-xl overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                        <img src="https://placehold.co/600x400/1E293B/F8FAFC?text=Project+1" alt="Project 1 preview" class="w-full h-48 object-cover">
+                        <div class="p-6 space-y-4">
+                            <h3 class="text-2xl font-bold">Featured Build</h3>
+                            <p class="text-medium-gray">A brief description of Project 1, highlighting its purpose and your role in its development. This section can be expanded in the modal.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-primary text-white text-xs px-3 py-1 rounded-full font-medium">React</span>
+                                <span class="bg-primary text-white text-xs px-3 py-1 rounded-full font-medium">Django</span>
+                                <span class="bg-primary text-white text-xs px-3 py-1 rounded-full font-medium">PostgreSQL</span>
+                            </div>
+                            <div class="flex justify-between items-center pt-4">
+                                <a href="#" class="text-accent hover:underline font-medium">See Live Demo &rarr;</a>
+                                <a href="#" class="text-medium-gray hover:text-primary">
+                                    <svg class="w-6 h-6 inline-block" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.875 8.205 11.458.6.11.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.334-1.756-1.334-1.756-1.09-.745.083-.73.083-.73 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.81 1.305 3.49.998.107-.775.418-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.229 1.14-.316 2.34-.474 3.54-.48 1.2.006 2.4.164 3.54.48 2.295-1.551 3.295-1.229 3.295-1.229.645 1.653.24 2.873.12 3.176.77.84 1.235 1.91 1.235 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .32.21.69.825.57C20.565 22.333 24 17.85 24 12.297c0-6.627-5.373-12-12-12z"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project Card 2 -->
+                    <div class="bg-white text-primary rounded-2xl shadow-xl overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                        <img src="https://placehold.co/600x400/1E293B/F8FAFC?text=Project+2" alt="Project 2 preview" class="w-full h-48 object-cover">
+                        <div class="p-6 space-y-4">
+                            <h3 class="text-2xl font-bold">Latest Creations</h3>
+                            <p class="text-medium-gray">A brief description of Project 2, highlighting its purpose and your role in its development.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-primary text-white text-xs px-3 py-1 rounded-full font-medium">Vue.js</span>
+                                <span class="bg-primary text-white text-xs px-3 py-1 rounded-full font-medium">Node.js</span>
+                                <span class="bg-primary text-white text-xs px-3 py-1 rounded-full font-medium">MongoDB</span>
+                            </div>
+                            <div class="flex justify-between items-center pt-4">
+                                <a href="#" class="text-accent hover:underline font-medium">See Live Demo &rarr;</a>
+                                <a href="#" class="text-medium-gray hover:text-primary">
+                                    <svg class="w-6 h-6 inline-block" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.875 8.205 11.458.6.11.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.334-1.756-1.334-1.756-1.09-.745.083-.73.083-.73 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.81 1.305 3.49.998.107-.775.418-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.229 1.14-.316 2.34-.474 3.54-.48 1.2.006 2.4.164 3.54.48 2.295-1.551 3.295-1.229 3.295-1.229.645 1.653.24 2.873.12 3.176.77.84 1.235 1.91 1.235 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .32.21.69.825.57C20.565 22.333 24 17.85 24 12.297c0-6.627-5.373-12-12-12z"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project Card 3 -->
+                    <div class="bg-white text-primary rounded-2xl shadow-xl overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                        <img src="https://placehold.co/600x400/1E293B/F8FAFC?text=Project+3" alt="Project 3 preview" class="w-full h-48 object-cover">
+                        <div class="p-6 space-y-4">
+                            <h3 class="text-2xl font-bold">Problem &rarr; Solution</h3>
+                            <p class="text-medium-gray">A brief description of Project 3, highlighting its purpose and your role in its development.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-primary text-white text-xs px-3 py-1 rounded-full font-medium">Python</span>
+                                <span class="bg-primary text-white text-xs px-3 py-1 rounded-full font-medium">FastAPI</span>
+                                <span class="bg-primary text-white text-xs px-3 py-1 rounded-full font-medium">Tailwind CSS</span>
+                            </div>
+                            <div class="flex justify-between items-center pt-4">
+                                <a href="#" class="text-accent hover:underline font-medium">See Live Demo &rarr;</a>
+                                <a href="#" class="text-medium-gray hover:text-primary">
+                                    <svg class="w-6 h-6 inline-block" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.875 8.205 11.458.6.11.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.334-1.756-1.334-1.756-1.09-.745.083-.73.083-.73 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.81 1.305 3.49.998.107-.775.418-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.229 1.14-.316 2.34-.474 3.54-.48 1.2.006 2.4.164 3.54.48 2.295-1.551 3.295-1.229 3.295-1.229.645 1.653.24 2.873.12 3.176.77.84 1.235 1.91 1.235 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .32.21.69.825.57C20.565 22.333 24 17.85 24 12.297c0-6.627-5.373-12-12-12z"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 px-4">
+            <div class="container mx-auto px-6 lg:px-8 max-w-4xl text-center">
+                <h2 class="text-4xl md:text-5xl font-bold text-primary mb-6">Let's Create Together</h2>
+                <p class="text-lg text-medium-gray mb-10">
+                    Ready to turn your idea into reality? I'm currently available for new opportunities. Let's connect!
+                </p>
+                
+                <div class="space-y-8 max-w-xl mx-auto">
+                    <form action="mailto:gouribiju0977@gmail.com" method="post" enctype="text/plain" class="bg-white p-8 md:p-12 rounded-2xl shadow-xl space-y-6">
+                        <input type="text" name="name" placeholder="Your Name" class="w-full p-4 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-accent transition-shadow" required>
+                        <input type="email" name="email" placeholder="Your Email" class="w-full p-4 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-accent transition-shadow" required>
+                        <textarea name="message" rows="5" placeholder="Your Message" class="w-full p-4 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-accent transition-shadow" required></textarea>
+                        <button type="submit" class="w-full bg-accent text-white py-4 rounded-full font-bold hover:bg-orange-600 transition-colors duration-300 shadow-lg">Send Message</button>
+                    </form>
+                    
+                    <div class="flex justify-center items-center space-x-6 pt-4">
+                        <a href="https://github.com/johntester" target="_blank" class="text-medium-gray hover:text-primary transition-colors duration-300">
+                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.875 8.205 11.458.6.11.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.334-1.756-1.334-1.756-1.09-.745.083-.73.083-.73 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.81 1.305 3.49.998.107-.775.418-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.229 1.14-.316 2.34-.474 3.54-.48 1.2.006 2.4.164 3.54.48 2.295-1.551 3.295-1.229 3.295-1.229.645 1.653.24 2.873.12 3.176.77.84 1.235 1.91 1.235 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .32.21.69.825.57C20.565 22.333 24 17.85 24 12.297c0-6.627-5.373-12-12-12z"/></svg>
+                        </a>
+                        <a href="https://linkedin.com/in/johntester" target="_blank" class="text-medium-gray hover:text-primary transition-colors duration-300">
+                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.23 0H1.77C.795 0 0 .795 0 1.77v20.46c0 .975.795 1.77 1.77 1.77h20.46c.975 0 1.77-.795 1.77-1.77V1.77C24 .795 23.205 0 22.23 0zM7.18 19.14H4.06V9.01h3.12v10.13zM5.62 7.64c-1.02 0-1.85-.83-1.85-1.85s.83-1.85 1.85-1.85 1.85.83 1.85 1.85-.83 1.85-1.85 1.85zM19.94 19.14h-3.08v-5.2c0-1.24-.02-2.84-1.73-2.84-1.73 0-2 1.35-2 2.75v5.29h-3.08V9.01h2.95v1.36h.04c.41-.77 1.4-1.57 2.92-1.57 3.12 0 3.7 2.05 3.7 4.72v5.62z"/></svg>
+                        </a>
+                        <a href="mailto:gouribiju0977@gmail.com" class="text-medium-gray hover:text-primary transition-colors duration-300">
+                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-primary text-medium-gray text-center py-6 px-4">
+        <p>&copy; 2024 Lakshmi. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Hero typing effect
+        const typingText = document.getElementById('typing-text');
+        const phrases = ["Full-Stack Developer", "Digital Problem Solver", "Crafting Web Experiences That Actually Work"];
+        let phraseIndex = 0;
+        let charIndex = 0;
+
+        function type() {
+            if (charIndex < phrases[phraseIndex].length) {
+                typingText.textContent += phrases[phraseIndex].charAt(charIndex);
+                charIndex++;
+                setTimeout(type, 100);
+            } else {
+                setTimeout(erase, 1500);
+            }
+        }
+
+        function erase() {
+            if (charIndex > 0) {
+                typingText.textContent = phrases[phraseIndex].substring(0, charIndex - 1);
+                charIndex--;
+                setTimeout(erase, 50);
+            } else {
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+                setTimeout(type, 500);
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            if (typingText) {
+                type();
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+    </script>
+</body>
+</html>
